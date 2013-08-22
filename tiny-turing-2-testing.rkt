@@ -59,4 +59,4 @@
      (start   1    start   duck R)
      (go-back duck halt goose R))))
 
-(duck-duck-goose '(1 1 1 1 1))
+#;(duck-duck-goose '(1 1 1 1 1))
