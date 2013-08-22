@@ -1,7 +1,7 @@
 #lang racket
 
 (require "tiny.rkt"
-         "tiny-turing.rkt"
+         "tiny-turing-2.rkt"
          "virtual-machine.rkt")
 (provide (all-defined-out))
 
@@ -48,3 +48,15 @@
 
 #;(double-list '(1 1 1))
 #;(double-list (map (λ (_) (range 100))))
+
+(define duck-duck-goose 
+  (make-tiny-turing
+   '(start go-back halt)
+   '(0 1 duck goose)
+   'start
+   'halt
+   '((start   0    go-back 0    L)
+     (start   1    start   duck R)
+     (go-back duck halt goose R))))
+
+(duck-duck-goose '(1 1 1 1 1))
